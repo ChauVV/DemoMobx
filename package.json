@@ -1,0 +1,62 @@
+{
+  "name": "mobx60",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "react-native start",
+    "lint:js": "npm run lint:eslint -- . ",
+    "lint": "npm run lint:js",
+    "lint:eslint": "eslint --ignore-path .gitignore --ignore-pattern internals/scripts --ignore-pattern generated.*",
+    "validate": "npm ls",
+    "reset": "rm -rf ./node_modules && rm -rf $TMPDIR/react-* && rm -rf ./ios/build && yarn cache clean && npm install",
+    "and": "react-native run-android",
+    "ios": "react-native run-ios --simulator=\"iPhone SE\"",
+    "ipad": "react-native run-ios --simulator=\"iPad Pro (12.9-inch) (2nd generation)\"",
+    "fix": "cd node_modules/react-native/third-party/glog-*&&../../scripts/ios-configure-glog.sh"
+  },
+  "dependencies": {
+    "@react-native-community/async-storage": "^1.6.1",
+    "mobx": "^5.13.0",
+    "mobx-react": "^6.1.1",
+    "react": "16.8.6",
+    "react-native": "0.60.4",
+    "react-native-gesture-handler": "^1.3.0",
+    "react-native-simple-store": "^2.0.0",
+    "react-navigation": "^3.11.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.5.4",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/plugin-proposal-decorators": "^7.4.4",
+    "@babel/plugin-transform-flow-strip-types": "^7.4.4",
+    "@babel/runtime": "^7.5.4",
+    "babel-eslint": "^10.0.2",
+    "babel-jest": "^24.8.0",
+    "babel-plugin-module-resolver": "^3.2.0",
+    "babel-plugin-transform-decorators-legacy": "^1.3.5",
+    "babel-plugin-transform-remove-console": "^6.9.4",
+    "eslint": "^6.0.1",
+    "eslint-config-standard": "^13.0.1",
+    "eslint-plugin-flowtype-errors": "^4.1.0",
+    "eslint-plugin-import": "^2.18.0",
+    "eslint-plugin-node": "^9.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.14.2",
+    "eslint-plugin-react-native": "^3.7.0",
+    "eslint-plugin-standard": "^4.0.0",
+    "flow-bin": "^0.102.0",
+    "jest": "^24.8.0",
+    "metro-react-native-babel-preset": "^0.55.0",
+    "precommit-hook-eslint": "^3.0.0",
+    "react-test-renderer": "16.8.6",
+    "schedule": "^0.5.0"
+  },
+  "jest": {
+    "preset": "react-native"
+  },
+  "pre-commit": [
+    "lint",
+    "validate",
+    "test"
+  ]
+}
