@@ -10,13 +10,14 @@
     "validate": "npm ls",
     "reset": "rm -rf ./node_modules && rm -rf $TMPDIR/react-* && rm -rf ./ios/build && yarn cache clean && npm install",
     "and": "react-native run-android",
-    "ios": "react-native run-ios --simulator=\"iPhone SE\"",
+    "ios": "react-native run-ios --simulator=\"iPhone Xs Max\"",
     "ipad": "react-native run-ios --simulator=\"iPad Pro (12.9-inch) (2nd generation)\"",
     "fix": "cd node_modules/react-native/third-party/glog-*&&../../scripts/ios-configure-glog.sh"
   },
   "dependencies": {
     "@react-native-community/async-storage": "^1.6.1",
     "mobx": "^5.13.0",
+    "mobx-logger": "^0.7.1",
     "mobx-react": "^6.1.1",
     "react": "16.8.6",
     "react-native": "0.60.4",
@@ -55,8 +56,6 @@
     "preset": "react-native"
   },
   "pre-commit": [
-    "lint",
-    "validate",
-    "test"
+    "lint"
   ]
 }

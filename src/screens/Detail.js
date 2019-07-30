@@ -5,11 +5,9 @@ import {
 } from 'react-native'
 import ItemStore from '../../mobx/ItemStore'
 // import PropTypes from 'prop-types'
-let count = 0
 @observer
 export default class Detail extends React.PureComponent {
   render () {
-    console.log('Render Detail: ', count++)
     return (
       <View style={styles.container}>
         <Text>Detail</Text>

@@ -7,11 +7,9 @@ import {
 import ItemStore from '../../mobx/ItemStore'
 import Detail from './Detail'
 import NaviStore from '../../mobx/NaviStore'
-let count = 0
 @observer
 class Home extends React.PureComponent {
   render () {
-    console.log('Render Home: ', count++)
     return (
       <View style={styles.container}>
 

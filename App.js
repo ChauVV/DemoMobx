@@ -3,7 +3,7 @@ import { observer } from 'mobx-react'
 import {
   StyleSheet, View
 } from 'react-native'
-
+import { enableLogging } from 'mobx-logger'
 import { createSwitchNavigator, createStackNavigator, createAppContainer } from 'react-navigation'
 import Home from './src/screens/Home'
 import Detail from './src/screens/Detail'
@@ -12,6 +12,16 @@ import LoginScreen from './src/screens/Login'
 import UserStore from './mobx/UserStore'
 import NaviStore from './mobx/NaviStore'
 console.disableYellowBox = true
+
+const config = {
+  predicate: () => __DEV__,
+  action: true,
+  reaction: true,
+  transaction: true,
+  compute: true
+}
+
+enableLogging(config)
 
 const stack1 = createStackNavigator(
   {
@@ -45,12 +55,10 @@ class App extends React.PureComponent {
 
   async componentDidMount () {
     const isLogin = await UserStore.getLogin()
-    console.log('componentDidMount: ', isLogin)
     this.setState({ isLogin })
   }
 
   render () {
-    console.log('render: ', this.state.isLogin)
     const RootNavigator = getRootNavigation(this.state.isLogin)
     return (
       <View style={styles.container}>

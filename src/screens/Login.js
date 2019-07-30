@@ -16,7 +16,6 @@ class Login extends React.PureComponent {
           style={styles.btn}
           onPress={() => {
             UserStore.setLogin(true)
-            console.log('push: ', this.props)
             NaviStore.pushToScreen('LoggedIn')
           } }>Login</Text>
       </SafeAreaView>

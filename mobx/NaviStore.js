@@ -44,9 +44,7 @@ class NavStore {
 
   @action onNavigationStateChange (prevState, currentState) {
     const currentScreen = getCurrentRouteName(currentState)
-
     this.currentRouteName = currentScreen
-    console.log(currentScreen)
   }
 }
 
