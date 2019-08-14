@@ -11,8 +11,19 @@ import LoginScreen from './src/screens/Login'
 
 import UserStore from './mobx/UserStore'
 import NaviStore from './mobx/NaviStore'
-console.disableYellowBox = true
 
+/** ------------------------------------------*
+* Activities: 
+* 1. BackHandler
+* 2. checkUpdate
+* 3. configPushNotification
+* 4. AppState (background, inactive, active)
+* -------------------------------------------*/
+
+/** ------------------------------------------*
+* Group Code: Debug
+* -------------------------------------------*/
+console.disableYellowBox = true
 const config = {
   predicate: () => __DEV__,
   action: true,
@@ -20,9 +31,11 @@ const config = {
   transaction: true,
   compute: true
 }
-
 enableLogging(config)
 
+/** ------------------------------------------*
+* Group Code: Navigation
+* -------------------------------------------*/
 const stack1 = createStackNavigator(
   {
     Home: Home,
